@@ -18,6 +18,10 @@ export default function AddFolderBtn() {
 
     function handleSubmit(e) {
         e.preventDefault()
+
+        // Create folder in database
+        setName("")
+        closeModal()
     }
 
     return (
@@ -39,7 +43,7 @@ export default function AddFolderBtn() {
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={closeModal}>Close</Button>
-                        <Button variant="success" type="submit" onClick={closeModal}>Add Folder</Button>
+                        <Button variant="success" type="submit">Add Folder</Button>
                     </Modal.Footer>
                 </Form>
             </Modal>
