@@ -7,6 +7,7 @@ import Profile from "./authentication/Profile"
 import PrivateRoute from "./authentication/PrivateRoute"
 import ForgotPassword from "./authentication/ForgotPassword"
 import UpdateProfile from "./authentication/UpdateProfile"
+import Dashboard from "./cloud-drive/Dashboard"
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
       <AuthProvider>
         <Switch>
           {/* Cloud Drive Routes */}
-
+          <PrivateRoute exact path="/" component={Dashboard} />
 
           {/* Profile Routes */}
           <PrivateRoute path="/user" component={Profile} />
