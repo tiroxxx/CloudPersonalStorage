@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 export default function NavbarComponent() {
     return (
-        <Navbar bg="ligh" expand="sm">
+        <Navbar bg="light" expand="">
             <Navbar.Brand as={Link} to="/">
                 CM Drive
             </Navbar.Brand>
