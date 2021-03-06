@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react"
 import { Card, Button, Form, Alert } from "react-bootstrap"
 import { Link, useHistory } from "react-router-dom"
 import { useAuth } from "../../contexts/AuthContext"
+import CenteredContainer from "./CenteredContainer"
 
 export default function Signup() {
 
@@ -30,11 +31,10 @@ export default function Signup() {
             setError("Failed to create an account")
             setLoading(false)
         }
-        
     }
 
     return (
-        <>
+        <CenteredContainer>
             <Card>
                 <Card.Body>
                     <h2 className="text-center mb-4">Sign Up</h2>
@@ -59,6 +59,6 @@ export default function Signup() {
             <div className="w-100 text-center mt-2">
                 Already have an account? <Link to="/login">Log In</Link>
             </div>
-        </>
+        </CenteredContainer>
     )
 }

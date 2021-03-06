@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react"
 import { Card, Button, Form, Alert } from "react-bootstrap"
 import { Link, useHistory } from "react-router-dom"
 import { useAuth } from "../../contexts/AuthContext"
+import CenteredContainer from "./CenteredContainer"
 
 export default function UpdateProfile() {
 
@@ -22,7 +23,7 @@ export default function UpdateProfile() {
         }
 
         const promises = [];
-        
+
         if (emailRef.current.value !== currentUser.email) {
             promises.push(updateEmail(emailRef.current.value))
         }
@@ -41,7 +42,7 @@ export default function UpdateProfile() {
 
 
     return (
-        <>
+        <CenteredContainer>
             <Card>
                 <Card.Body>
                     <h2 className="text-center mb-4">Update Profile</h2>
@@ -66,6 +67,6 @@ export default function UpdateProfile() {
             <div className="w-100 text-center mt-2">
                 <Link to="/">Cancel</Link>
             </div>
-        </>
+        </CenteredContainer>
     )
 }
