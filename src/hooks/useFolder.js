@@ -16,11 +16,11 @@ function reducer(state, { type, payload }) {
                 childFiles: [],
                 childFolders: []
             }
-            case ACTIONS.UPDATE_FOLDER:
-                return {
-                    ...state,
-                    folder: payload.folder
-                }
+        case ACTIONS.UPDATE_FOLDER:
+            return {
+                ...state,
+                folder: payload.folder
+            }
         default:
             return state
     }
@@ -46,4 +46,6 @@ export function useFolder(folderId = null, folder = null) {
             })
         }
     }, [folderId])
+
+    return state
 }
