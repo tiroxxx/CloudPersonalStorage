@@ -5,7 +5,17 @@ const ACTIONS = {
 }
 
 function reducer(state, { type, payload }) {
-    
+    switch (type) {
+        case ACTIONS.SELECT_FOLDER:
+            return {
+                folderId: payload.folderId,
+                folder: payload.folder,
+                childFiles: [],
+                childFolders: []
+            }
+        default:
+            return state
+    }
 }
 
 export function useFolder(folderId = null, folder = null) {
@@ -19,4 +29,10 @@ export function useFolder(folderId = null, folder = null) {
     useEffect(() => {
         dispatch({ type: ACTIONS.SELECT_FOLDER, payload: { folderId, folder } })
     }, [folderId, folder])
+
+    useEffect(() => {
+        if (folderId == null) {
+            return dispatch
+        }
+    }, [folderId])
 }
