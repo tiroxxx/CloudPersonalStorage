@@ -5,7 +5,7 @@ import AddFolderBtn from './AddFolderBtn'
 import NavbarComponent from "./Navbar"
 
 export default function Dashboard() {
-    const { folder } = useFolder()
+    const { folder } = useFolder("D9XF6ZylXRbLgxaP9XaX")
 
     return (
         <>
