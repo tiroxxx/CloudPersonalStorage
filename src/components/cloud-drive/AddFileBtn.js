@@ -1,14 +1,23 @@
 import { faFileUpload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
+import { useAuth } from "../../contexts/AuthContext"
+import { storage } from "../../firebase"
 
 export default function AddFileBtn({ currentFolder }) {
+    const { currentUser } = useAuth()
 
     function handleUpload(e) {
         const file = e.target.files[0]
         if (currentFolder == null || file == null) return
 
-        
+        const filePath = currentFolder.path.length > 0 ?
+        `${currentFolder.path.join("/")}/${file.name}`
+        : file.name
+
+        const uploadTask = storage
+        .ref(`/files/${currentUser.uid}/${filePath}`)
+        .put(file)
     }
 
     return (
