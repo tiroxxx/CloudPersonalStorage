@@ -15,10 +15,13 @@ export default function FolderBreadcrumbs({ currentFolder }) {
         >
             {path.map((folder, index) => (
                 <Breadcrumb.Item
-                    key={index}
+                    key={folder.id}
                     linkAs={Link}
                     linkProps={{
-                        to: folder.id ? `/folder/${folder.id}` : "/"
+                        to: {
+                            pathname: folder.id ? `/folder/${folder.id}` : "/",
+                            state: { folder: {...folder, path: path.slice(1, index) } }
+                        }
                     }}
                     className="text-truncate d-inline-block"
                     style={{ maxWidth: "150px" }}
