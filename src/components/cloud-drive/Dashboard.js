@@ -3,15 +3,25 @@ import { Container } from 'react-bootstrap'
 import { useFolder } from '../../hooks/useFolder'
 import AddFolderBtn from './AddFolderBtn'
 import NavbarComponent from "./Navbar"
+import Folder from "./Folder"
 
 export default function Dashboard() {
-    const { folder } = useFolder("D9XF6ZylXRbLgxaP9XaX")
-
+    const { folder, childFolders } = useFolder("D9XF6ZylXRbLgxaP9XaX")
+    console.log(folder);
     return (
         <>
             <NavbarComponent />
             <Container fluid>
-            <AddFolderBtn currentFolder={folder} />
+                <AddFolderBtn currentFolder={folder} />
+                {childFolders.length > 0 && (
+                    <div className="d-flex flex-wrap">
+                        {childFolders.map(childFolder => (
+                            <div key={folder.id} style={{ maxWidth: "250px" }} className="p-2">
+                                <Folder folder={childFolder} />
+                            </div>
+                        ))}
+                    </div>
+                )}
             </Container>
         </>
     )
