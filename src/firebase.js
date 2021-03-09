@@ -25,5 +25,5 @@ export const database = {
 }
 
 export const storage = app.storage()
-export const auth = app.auth();
+export const auth = app.auth()
 export default app

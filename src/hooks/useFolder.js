@@ -33,7 +33,7 @@ function reducer(state, { type, payload }) {
         case ACTIONS.SET_CHILD_FILES:
             return {
                 ...state,
-                childFiless: payload.childFiles
+                childFiles: payload.childFiles
             }
         default:
             return state
@@ -92,7 +92,7 @@ export function useFolder(folderId = null, folder = null) {
 
     useEffect(() => {
         return database.files
-            .where("parentId", "==", folderId)
+            .where("folderId", "==", folderId)
             .where("userId", "==", currentUser.uid)
             .orderBy("createdAt")
             .onSnapshot(snapshot => {
