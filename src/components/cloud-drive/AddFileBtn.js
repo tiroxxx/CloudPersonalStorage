@@ -43,7 +43,14 @@ export default function AddFileBtn({ currentFolder }) {
                 })
             })
         }, () => {
-            
+            setUploadingFiles(prevUploadingFiles => {
+                return prevUploadingFiles.map(uploadFile => {
+                    if (uploadFile.id === id) {
+                        return { ...uploadFile, error: true }
+                    }
+                    return uploadFile
+                })
+            })
         }, () => {
             setUploadingFiles(prevUploadingFiles => {
                 return prevUploadingFiles.filter(uploadFile => {
