@@ -32,10 +32,25 @@ export default function AddFileBtn({ currentFolder }) {
             .put(file)
 
         uploadTask.on("state_changed", snapshot => {
+            const progress = snapshot.bytesTransferred / snapshot.totalBytes
+            setUploadingFiles(prevUploadingFiles => {
+                return prevUploadingFiles.map(uploadFile => {
+                    if (uploadFile.id === id) {
+                        return { ...uploadFile, progress: progress }
+                    }
 
+                    return uploadFile
+                })
+            })
         }, () => {
+            
+        }, () => {
+            setUploadingFiles(prevUploadingFiles => {
+                return prevUploadingFiles.filter(uploadFile => {
+                    return uploadFile.id !== id
+                })
+            })
 
-        }, () => {
             uploadTask.snapshot.ref.getDownloadURL().then(url => {
                 database.files.add({
                     url: url,
@@ -62,10 +77,14 @@ export default function AddFileBtn({ currentFolder }) {
                             bottom: "1rem",
                             right: "1rem",
                             maxWidth: "250px"
-                        }}>
+                        }}
+                    >
                         {uploadingFiles.map(file => (
                             <Toast key={file.id}>
-                                <Toast.Header className="text-truncate w-100 d-block">
+                                <Toast.Header
+                                    closeButton={file.error}
+                                    className="text-truncate w-100 d-block"
+                                >
                                     {file.name}
                                 </Toast.Header>
                                 <Toast.Body>
