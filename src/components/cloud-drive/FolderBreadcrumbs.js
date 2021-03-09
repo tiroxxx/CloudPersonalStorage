@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react"
 import { Breadcrumb } from "react-bootstrap"
-import { ROOT_FOLDER } from '../../hooks/useFolder'
+import { ROOT_FOLDER } from "../../hooks/useFolder"
 import { Link } from "react-router-dom"
 
 export default function FolderBreadcrumbs({ currentFolder }) {

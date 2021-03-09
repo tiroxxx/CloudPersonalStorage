@@ -1,8 +1,8 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
-import { useFolder } from '../../hooks/useFolder'
-import AddFolderBtn from './AddFolderBtn'
-import AddFileBtn from './AddFileBtn'
+import React from "react"
+import { Container } from "react-bootstrap"
+import { useFolder } from "../../hooks/useFolder"
+import AddFolderBtn from "./AddFolderBtn"
+import AddFileBtn from "./AddFileBtn"
 import NavbarComponent from "./Navbar"
 import Folder from "./Folder"
 import File from "./File"

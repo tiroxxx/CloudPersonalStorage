@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Button, Form, Modal } from 'react-bootstrap'
+import React, { useState } from "react"
+import { Button, Form, Modal } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFolderPlus } from "@fortawesome/free-solid-svg-icons"
 import { database } from "../../firebase"
