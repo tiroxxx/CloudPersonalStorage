@@ -3,8 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
 export default function File({ file }) {
-    console.log(file.name);
-    console.log("hi");
     return (
         <a
             href={file.url}
