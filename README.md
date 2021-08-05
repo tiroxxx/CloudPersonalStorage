@@ -1,7 +1,10 @@
 # Personal Cloud Storage ![Personal Cloud Storage](https://img.shields.io/github/languages/top/tiroxxx/CloudPersonalStorage) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   ## Description 
   With this app the user can save any file to the cloud removing the need for a thumb drive when switch devices, bringing what you need anywhere you go. It is built with React and deployed to Firebase. The backend is handled with Firebase's Firestore Database to save the files' location and Firebase Storage to save the actual file.
-  ## Table of Contents
+
+https://user-images.githubusercontent.com/70029613/128392838-3cc5d92a-3be9-45b1-bef8-444e3db33893.mp4
+ 
+ ## Table of Contents
   
   * [Installation](#installation)
   * [Usage](#usage)
